@@ -26,7 +26,7 @@ class SearchedHome extends React.Component {
     super(props);
     this.state = {};
   }
-  
+
   seeProfile() {
     ReactDOM.render(<ProfileView />, document.getElementById("app"));
   }
@@ -35,6 +35,7 @@ class SearchedHome extends React.Component {
   }
 
   chat() {
+    var description1 = this.props.post.description;
     $("#chatbox").show();
     // Make connection
     var socket = io.connect("http://localhost:3000");
@@ -53,10 +54,12 @@ class SearchedHome extends React.Component {
       });
       console.log(message.value, handle.value);
       var dat = new Date().toString();
+      console.log(description1);
       axios.post("/messages", {
         sender: handle.value,
         message: message.value,
         date: dat,
+        description: description1,
       });
       message.value = "";
     });
@@ -81,7 +84,9 @@ class SearchedHome extends React.Component {
     return (
       <div>
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand onClick={this.seeSelectAction.bind(this)}>HAMhome</Navbar.Brand>
+          <Navbar.Brand onClick={this.seeSelectAction.bind(this)}>
+            HAMhome
+          </Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link></Nav.Link>
             <Nav.Link onClick={this.seeProfile.bind(this)}>Profile</Nav.Link>
@@ -125,10 +130,7 @@ class SearchedHome extends React.Component {
                 </Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey="0">
-                <Card.Body>
-                  {" "}
-                  {this.props.post.description}{" "}
-                </Card.Body>
+                <Card.Body> {this.props.post.description} </Card.Body>
               </Accordion.Collapse>
             </Card>
             <Card>
@@ -138,10 +140,7 @@ class SearchedHome extends React.Component {
                 </Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey="1">
-                <Card.Body>
-                  {" "}
-                  {this.props.post.address}{" "}
-                </Card.Body>
+                <Card.Body> {this.props.post.address} </Card.Body>
               </Accordion.Collapse>
             </Card>
             <Card>
@@ -154,13 +153,12 @@ class SearchedHome extends React.Component {
                 <Card.Body>
                   {" "}
                   Price : ${this.props.post.price}
-                  <br/>
+                  <br />
                   Rooms : {this.props.post.rooms}
-                  <br/>
+                  <br />
                   Rating : {this.props.post.rating}
-                  <br/>
-                  Availibility : {this.props.post.availibility}
-                  {" "}
+                  <br />
+                  Availibility : {this.props.post.availibility}{" "}
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
