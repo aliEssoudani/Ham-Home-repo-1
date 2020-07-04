@@ -6,6 +6,7 @@ var posts = require("../database-mongo");
 var path = require("path");
 var socket = require("socket.io");
 
+
 var app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/../react-client/dist"));
@@ -84,9 +85,15 @@ app.get("/rentPosts1", (req, res) => {
   });
 });
 
+app.post("/GetMessages", (req, res) => {
+  posts.Post.find({ description: req.body.description }, (err, docs) => {
+    res.send(docs[0]._doc.messages);
+  });
+});
+
 app.post("/messages", (req, res) => {
   posts.Post.find({ description: req.body.description }, (err, docs) => {
-    let newMessage = docs[0]._doc.messages + JSON.stringify(req.body);
+    let newMessage = docs[0]._doc.messages + JSON.stringify(req.body) + ",";
     console.log("newMessage", newMessage);
     console.log(docs[0]._doc.messages);
     posts.Post.update(
