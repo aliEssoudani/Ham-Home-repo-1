@@ -59,7 +59,7 @@
 }
 
 #startchat {
-  margin-left: 510px;
+  margin-left: 550px;
   margin-top: 200px;
 }
 
@@ -67,7 +67,7 @@
   display: none;
   width: 300px;
   margin-top: -230px;
-  height: 200px;
+  height: 500px;
   margin-left: 850px;
 }
 
@@ -294,8 +294,8 @@ mark {
 /*css for chat room component*/
 
 #mario-chat {
-  max-width: 250px;
-  height: 150px;
+  max-width: 350px;
+  height: 450px;
   margin-left: 10px;
   border: 1px solid #ddd;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
@@ -304,12 +304,12 @@ mark {
 }
 
 #chat-window {
-  height: 100px;
+  height: 300px;
   overflow: auto;
-  background: rgb(195, 185, 185);
+  background: #e6e4e4;
 }
 
-/* #output p {
+#output p {
   padding: 14px 0px;
   margin: 0 20px;
   border-bottom: 1px solid #e9e9e9;
@@ -317,7 +317,7 @@ mark {
 }
 
 #feedback p {
-  color: #aaa;
+  color: #575ed8;
   padding: 14px 0px;
   margin: 0 20px;
 }
@@ -352,4 +352,4 @@ label {
   font-size: 16px;
   width: 100%;
   border-radius: 5px;
-} */
+}

@@ -100,7 +100,7 @@ import PostView from "./postView.jsx";
 import SearchedHome from "./searchedHome.jsx";
 import SelectAction from "./selectAction.jsx";
 import ProfileView from "./profileView.jsx";
-import ContentEditable from "react-contenteditable";
+// import ContentEditable from "react-contenteditable";
 import $ from "jquery";
 import axios from "axios";
 import {
