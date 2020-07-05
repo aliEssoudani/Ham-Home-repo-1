@@ -54,7 +54,7 @@
   height: 400px;
   width: 49%;
 }
-#imagecaroussel {
+.imagecaroussel {
   height: 300px;
 }
 
@@ -326,11 +326,11 @@ mark {
   color: #575ed8;
 }
 
-label {
+/* label {
   box-sizing: border-box;
   display: block;
   padding: 10px 20px;
-}
+} */
 
 #message,
 #handel {

@@ -47,8 +47,15 @@
   margin-top: 10px;
   margin-left: 10px;
   border-radius: 10px;
-  height: 750px;
+  height: 650px;
 }
 #cardBoxImage {
-  height: 360px;
+  height: 280px;
+}
+
+.cardBox {
+  display: inline;
+  /* float: right; */
+  /* margin-top: 20px; */
+  margin-left: 10px;
 }
