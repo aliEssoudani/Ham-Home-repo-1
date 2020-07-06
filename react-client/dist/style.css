@@ -381,7 +381,17 @@ mark {
   margin-left: 50%;
 }
 
-
 #logoImage {
   margin-top: 50px;
+}
+
+#footer {
+  border-radius: 2px solid #6b90cf;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #6b90cf;
+  color: black;
+  text-align: center;
 }
